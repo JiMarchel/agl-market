@@ -29,7 +29,7 @@ export function WhyUs() {
             <div className="relative flex min-h-80 items-center justify-center overflow-hidden px-6">
                 <div className="absolute inset-0">
                     <Silk
-                        speed={7}
+                        speed={10}
                         scale={1}
                         color="#001415"
                         noiseIntensity={0}
