@@ -24,10 +24,10 @@ export function Footer() {
                         </div>
                     </div>
                     
-                    <div className="flex flex-col items-start md:items-end gap-10">
+                    <div className="flex flex-col items-start md:items-end gap-10 w-full md:w-auto">
                         {/* Social & App Icons */}
-                        <div className="flex gap-4 md:gap-16">
-                            <div className="flex gap-2.5">
+                        <div className="flex flex-wrap gap-4 md:gap-16">
+                            <div className="flex flex-wrap gap-2.5">
                                 <Button className="hover:bg-secondary bg-secondary h-fit p-2">
                                     <img src="/icon/facebook.png" alt="Facebook" className="w-10 h-10 object-contain" />
                                 </Button>
@@ -41,7 +41,7 @@ export function Footer() {
                                     <img src="/icon/youtube.png" alt="YouTube" className="w-10 h-10 object-contain" />
                                 </Button>
                             </div>
-                            <div className="flex gap-2.5 pl-2 md:pl-4">
+                            <div className="flex flex-wrap gap-2.5">
                                 <Button className="hover:bg-secondary bg-secondary h-fit p-2">
                                     <img src="/icon/mac-os-logo.png" alt="Apple" className="w-10 h-10 object-contain" />
                                 </Button>
@@ -55,7 +55,7 @@ export function Footer() {
                         </div>
 
                         {/* Navigation Links */}
-                        <div className="flex gap-16 md:gap-32 text-left pr-4 md:pr-10">
+                        <div className="grid grid-cols-2 gap-8 md:gap-32 text-left w-full md:w-auto">
                             <div className="flex flex-col gap-4">
                                 <h4 className="text-xl font-bold">Trading</h4>
                                 <ul className="flex flex-col gap-2.5 text-[13px] text-white/60">
