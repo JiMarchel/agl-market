@@ -20,7 +20,7 @@ const navItems = [
 
 export function Navbar() {
   return (
-    <nav className="bg-muted-3 text-white px-6 py-2">
+    <nav className="sticky top-0 z-50 bg-muted-3 text-white px-6 py-2 border-b border-white/10">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         <Link to="/">
           <img src="/logo.png" alt="AGL Market" className="h-10 w-auto" />
