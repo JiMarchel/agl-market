@@ -1,7 +1,7 @@
 export function Hero() {
   return (
     <section
-      className="relative flex min-h-150 items-center bg-cover bg-center"
+      className="relative flex min-h-162.5 lg:min-h-212.5 items-center bg-cover bg-center"
       style={{ backgroundImage: "url(/hero.png)" }}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-end px-6">
