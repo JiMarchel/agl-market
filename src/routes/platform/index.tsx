@@ -1,3 +1,4 @@
+import { Header } from '#/features/platform/components/header'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/platform/')({
@@ -5,5 +6,5 @@ export const Route = createFileRoute('/platform/')({
 })
 
 function RouteComponent() {
-  return <div>Hello "/platform/"!</div>
+  return <><Header /></>
 }
