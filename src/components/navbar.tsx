@@ -1,5 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "#/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "#/components/ui/sheet";
+import { Menu } from "lucide-react";
 
 const navItems = [
   { label: "Home", to: "/" },
@@ -18,6 +26,7 @@ export function Navbar() {
           <img src="/logo.png" alt="AGL Market" className="h-10 w-auto" />
         </Link>
 
+        {/* Desktop Navigation */}
         <div className="hidden items-center gap-2 lg:flex">
           {navItems.map((item) => (
             <Link
@@ -31,8 +40,9 @@ export function Navbar() {
           ))}
         </div>
 
+        {/* Desktop Actions */}
         <div className="hidden items-center gap-1 lg:flex">
-          <Button variant="ghost" size="lg" className="text-black bg-white">
+          <Button variant="ghost" size="lg" className="text-black bg-white hover:bg-white/90">
             Log In
           </Button>
           <Button
@@ -43,11 +53,44 @@ export function Navbar() {
           </Button>
         </div>
 
-        <button className="flex flex-col gap-1 lg:hidden">
-          <span className="block h-0.5 w-5 rounded bg-white" />
-          <span className="block h-0.5 w-5 rounded bg-white" />
-          <span className="block h-0.5 w-5 rounded bg-white" />
-        </button>
+        {/* Mobile Navigation (Sheet) */}
+        <div className="lg:hidden flex items-center">
+          <Sheet>
+            <SheetTrigger>
+              <Button size="icon-lg" className="text-white bg-muted-3 hover:bg-muted-3 cursor-pointer border-none p-0 h-auto w-auto focus:ring-0">
+                <Menu className="h-7 w-7" />
+                <span className="sr-only">Toggle Menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="bg-[#18181b] border-r border-white/10 text-white p-6 w-[80%] max-w-87.5">
+              <SheetHeader className="mb-10 text-left">
+                <SheetTitle>
+                  <img src="/logo.png" alt="AGL Market" className="h-10 w-auto" />
+                </SheetTitle>
+              </SheetHeader>
+              <div className="flex flex-col gap-2">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    className="rounded-lg px-4 py-3 text-base font-medium text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+                    activeProps={{ className: "text-white bg-white/10 font-semibold" }}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-8 flex flex-col gap-3">
+                <Button variant="outline" className="w-full text-black border-white/20 hover:bg-white py-6 text-base" size="lg">
+                  Log In
+                </Button>
+                <Button className="w-full bg-primary text-black hover:bg-primary/90 py-6 text-base font-bold" size="lg">
+                  Sign Up
+                </Button>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </nav>
   );
