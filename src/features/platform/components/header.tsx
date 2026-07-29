@@ -24,7 +24,7 @@ export function Header() {
 
                     <div className="bg-[#111] text-white rounded-xl px-7 py-4 flex items-center gap-4 w-fit shadow-xl mt-2">
                         <div className="bg-white rounded-full p-1 text-black flex items-center justify-center">
-                            <Check className="w-7 h-7 stroke-[3]" />
+                            <Check className="w-7 h-7 stroke-3" />
                         </div>
                         <span className="text-3xl font-bold tracking-wide">Metatrader 5</span>
                     </div>
@@ -41,11 +41,11 @@ export function Header() {
                 </div>
 
                 {/* Right Content */}
-                <div className="flex-1 relative w-full flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
+                <div className="flex-1 relative w-full flex items-center justify-center min-h-100 lg:min-h-125">
                     <img 
                         src="/Double-Phone.png" 
                         alt="Double Phones" 
-                        className="w-full h-auto max-w-[650px] object-contain transform lg:scale-125 lg:translate-x-12 lg:-translate-y-4"
+                        className="w-full h-auto max-w-162.5 object-contain transform lg:scale-125 lg:translate-x-12 lg:-translate-y-4"
                     />
                 </div>
             </div>
