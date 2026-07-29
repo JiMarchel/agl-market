@@ -66,12 +66,12 @@ export function AccountTypes() {
               key={plan.name}
               className={`relative flex h-full flex-col rounded-xl bg-white text-left ${
                 plan.popular
-                  ? "border-[3px] border-[#a3ff00] shadow-xl"
+                  ? "border-[3px] border-primary shadow-xl"
                   : "shadow-md mt-10 md:mt-0"
               }`}
             >
               {plan.popular && (
-                <div className="flex w-full items-center justify-center gap-1.5 rounded-t-lg bg-[#a3ff00] py-2 text-xs font-bold text-black uppercase tracking-wider">
+                <div className="flex w-full items-center justify-center gap-1.5 rounded-t-lg bg-primary py-2 text-xs font-bold text-black uppercase tracking-wider">
                   Most Popular <Sparkles className="h-3.5 w-3.5 fill-black" />
                 </div>
               )}
@@ -85,7 +85,7 @@ export function AccountTypes() {
                   {plan.deposit}
                 </div>
 
-                <button className="mt-8 w-full rounded-md bg-[#a3ff00] py-3 text-sm font-bold text-black transition-colors hover:bg-[#94e600] active:scale-[0.98]">
+                <button className="mt-8 w-full rounded-md bg-primary py-3 text-sm font-bold text-black transition-colors hover:bg-primary/80 active:scale-[0.98]">
                   Get started
                 </button>
 
