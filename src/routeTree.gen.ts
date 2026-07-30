@@ -13,6 +13,9 @@ import { Route as homeIndexRouteImport } from './routes/(home)/index'
 import { Route as AboutUsIndexRouteImport } from './routes/about-us/index'
 import { Route as PlatformIndexRouteImport } from './routes/platform/index'
 import { Route as TradingIndexRouteImport } from './routes/trading/index'
+import { Route as authForgetPasswordIndexRouteImport } from './routes/(auth)/forget-password/index'
+import { Route as authSignInIndexRouteImport } from './routes/(auth)/sign-in/index'
+import { Route as authSignUpIndexRouteImport } from './routes/(auth)/sign-up/index'
 
 const homeIndexRoute = homeIndexRouteImport.update({
   id: '/(home)/',
@@ -34,18 +37,39 @@ const TradingIndexRoute = TradingIndexRouteImport.update({
   path: '/trading/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const authForgetPasswordIndexRoute = authForgetPasswordIndexRouteImport.update({
+  id: '/(auth)/forget-password/',
+  path: '/forget-password/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const authSignInIndexRoute = authSignInIndexRouteImport.update({
+  id: '/(auth)/sign-in/',
+  path: '/sign-in/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const authSignUpIndexRoute = authSignUpIndexRouteImport.update({
+  id: '/(auth)/sign-up/',
+  path: '/sign-up/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof homeIndexRoute
   '/about-us/': typeof AboutUsIndexRoute
   '/platform/': typeof PlatformIndexRoute
   '/trading/': typeof TradingIndexRoute
+  '/forget-password/': typeof authForgetPasswordIndexRoute
+  '/sign-in/': typeof authSignInIndexRoute
+  '/sign-up/': typeof authSignUpIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof homeIndexRoute
   '/about-us': typeof AboutUsIndexRoute
   '/platform': typeof PlatformIndexRoute
   '/trading': typeof TradingIndexRoute
+  '/forget-password': typeof authForgetPasswordIndexRoute
+  '/sign-in': typeof authSignInIndexRoute
+  '/sign-up': typeof authSignUpIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +77,38 @@ export interface FileRoutesById {
   '/about-us/': typeof AboutUsIndexRoute
   '/platform/': typeof PlatformIndexRoute
   '/trading/': typeof TradingIndexRoute
+  '/(auth)/forget-password/': typeof authForgetPasswordIndexRoute
+  '/(auth)/sign-in/': typeof authSignInIndexRoute
+  '/(auth)/sign-up/': typeof authSignUpIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about-us/' | '/platform/' | '/trading/'
+  fullPaths:
+    | '/'
+    | '/about-us/'
+    | '/platform/'
+    | '/trading/'
+    | '/forget-password/'
+    | '/sign-in/'
+    | '/sign-up/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about-us' | '/platform' | '/trading'
-  id: '__root__' | '/(home)/' | '/about-us/' | '/platform/' | '/trading/'
+  to:
+    | '/'
+    | '/about-us'
+    | '/platform'
+    | '/trading'
+    | '/forget-password'
+    | '/sign-in'
+    | '/sign-up'
+  id:
+    | '__root__'
+    | '/(home)/'
+    | '/about-us/'
+    | '/platform/'
+    | '/trading/'
+    | '/(auth)/forget-password/'
+    | '/(auth)/sign-in/'
+    | '/(auth)/sign-up/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +116,9 @@ export interface RootRouteChildren {
   AboutUsIndexRoute: typeof AboutUsIndexRoute
   PlatformIndexRoute: typeof PlatformIndexRoute
   TradingIndexRoute: typeof TradingIndexRoute
+  authForgetPasswordIndexRoute: typeof authForgetPasswordIndexRoute
+  authSignInIndexRoute: typeof authSignInIndexRoute
+  authSignUpIndexRoute: typeof authSignUpIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +151,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TradingIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/(auth)/forget-password/': {
+      id: '/(auth)/forget-password/'
+      path: '/forget-password'
+      fullPath: '/forget-password/'
+      preLoaderRoute: typeof authForgetPasswordIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(auth)/sign-in/': {
+      id: '/(auth)/sign-in/'
+      path: '/sign-in'
+      fullPath: '/sign-in/'
+      preLoaderRoute: typeof authSignInIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(auth)/sign-up/': {
+      id: '/(auth)/sign-up/'
+      path: '/sign-up'
+      fullPath: '/sign-up/'
+      preLoaderRoute: typeof authSignUpIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +180,9 @@ const rootRouteChildren: RootRouteChildren = {
   AboutUsIndexRoute: AboutUsIndexRoute,
   PlatformIndexRoute: PlatformIndexRoute,
   TradingIndexRoute: TradingIndexRoute,
+  authForgetPasswordIndexRoute: authForgetPasswordIndexRoute,
+  authSignInIndexRoute: authSignInIndexRoute,
+  authSignUpIndexRoute: authSignUpIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
