@@ -43,13 +43,17 @@ export function Navbar() {
         {/* Desktop Actions */}
         <div className="hidden items-center gap-1 lg:flex">
           <Button variant="ghost" size="lg" className="text-black bg-white hover:bg-white/90">
-            Log In
+            <Link to="/sign-in">
+              Log In
+            </Link>
           </Button>
           <Button
             className="bg-primary text-black hover:bg-primary/90"
             size="lg"
           >
-            Sign Up
+            <Link to="/sign-up">
+              Sign Up
+            </Link>
           </Button>
         </div>
 
@@ -82,10 +86,14 @@ export function Navbar() {
               </div>
               <div className="mt-8 flex flex-col gap-3">
                 <Button variant="outline" className="w-full text-black border-white/20 hover:bg-white py-6 text-base" size="lg">
-                  Log In
+                  <Link to="/sign-in">
+                    Log In
+                  </Link>
                 </Button>
                 <Button className="w-full bg-primary text-black hover:bg-primary/90 py-6 text-base font-bold" size="lg">
-                  Sign Up
+                  <Link to="/sign-up">
+                    Sign Up
+                  </Link>
                 </Button>
               </div>
             </SheetContent>

@@ -1,3 +1,4 @@
+import { ForgetPasswordScreen } from '#/features/auth/forget-password/screen/forget-password-screen'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/(auth)/forget-password/')({
@@ -5,5 +6,5 @@ export const Route = createFileRoute('/(auth)/forget-password/')({
 })
 
 function RouteComponent() {
-  return <div>Hello "/(auth)/forget-password/"!</div>
+  return <ForgetPasswordScreen/>
 }
