@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as homeIndexRouteImport } from './routes/(home)/index'
 import { Route as AboutUsIndexRouteImport } from './routes/about-us/index'
 import { Route as PlatformIndexRouteImport } from './routes/platform/index'
+import { Route as TradingIndexRouteImport } from './routes/trading/index'
 
 const homeIndexRoute = homeIndexRouteImport.update({
   id: '/(home)/',
@@ -28,35 +29,44 @@ const PlatformIndexRoute = PlatformIndexRouteImport.update({
   path: '/platform/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TradingIndexRoute = TradingIndexRouteImport.update({
+  id: '/trading/',
+  path: '/trading/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof homeIndexRoute
   '/about-us/': typeof AboutUsIndexRoute
   '/platform/': typeof PlatformIndexRoute
+  '/trading/': typeof TradingIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof homeIndexRoute
   '/about-us': typeof AboutUsIndexRoute
   '/platform': typeof PlatformIndexRoute
+  '/trading': typeof TradingIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/(home)/': typeof homeIndexRoute
   '/about-us/': typeof AboutUsIndexRoute
   '/platform/': typeof PlatformIndexRoute
+  '/trading/': typeof TradingIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about-us/' | '/platform/'
+  fullPaths: '/' | '/about-us/' | '/platform/' | '/trading/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about-us' | '/platform'
-  id: '__root__' | '/(home)/' | '/about-us/' | '/platform/'
+  to: '/' | '/about-us' | '/platform' | '/trading'
+  id: '__root__' | '/(home)/' | '/about-us/' | '/platform/' | '/trading/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   homeIndexRoute: typeof homeIndexRoute
   AboutUsIndexRoute: typeof AboutUsIndexRoute
   PlatformIndexRoute: typeof PlatformIndexRoute
+  TradingIndexRoute: typeof TradingIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +92,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlatformIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/trading/': {
+      id: '/trading/'
+      path: '/trading'
+      fullPath: '/trading/'
+      preLoaderRoute: typeof TradingIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   homeIndexRoute: homeIndexRoute,
   AboutUsIndexRoute: AboutUsIndexRoute,
   PlatformIndexRoute: PlatformIndexRoute,
+  TradingIndexRoute: TradingIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

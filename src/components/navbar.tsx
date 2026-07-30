@@ -11,7 +11,7 @@ import { Menu } from "lucide-react";
 
 const navItems = [
   { label: "Home", to: "/" },
-  { label: "Trading", to: "#" },
+  { label: "Trading", to: "/trading" },
   { label: "Platform", to: "/platform" },
   { label: "Education", to: "#" },
   { label: "Company", to: "#" },
