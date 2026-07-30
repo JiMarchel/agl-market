@@ -1,4 +1,5 @@
 import { Button } from "#/components/ui/button";
+import { Link } from "@tanstack/react-router";
 
 export function Footer() {
     return (
@@ -7,23 +8,23 @@ export function Footer() {
                 {/* Top Section */}
                 <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-10 md:gap-0">
                     <div className="flex flex-col items-start">
-                        <img 
-                            src="/logo.png" 
-                            alt="Agl Market" 
-                            className="w-20 h-auto mb-8 object-contain object-top-left" 
+                        <img
+                            src="/logo.png"
+                            alt="Agl Market"
+                            className="w-20 h-auto mb-8 object-contain object-top-left"
                         />
-                        
+
                         <p className="max-w-xs text-white/90 text-sm font-medium mb-6">
-                            Trading With Agl Market: spreads<br/>
+                            Trading With Agl Market: spreads<br />
                             starting at 0.5, minimum deposit of $10.
                         </p>
-                        
+
                         <div className="flex flex-col gap-1.5 font-semibold">
                             <a href="mailto:support@aglarea.com" className="hover:text-primary transition-colors text-sm">support@aglarea.com</a>
                             <a href="tel:+180098765432" className="hover:text-primary transition-colors text-sm">+1 800.98.76.5432</a>
                         </div>
                     </div>
-                    
+
                     <div className="flex flex-col items-start md:items-end gap-10 w-full md:w-auto">
                         {/* Social & App Icons */}
                         <div className="flex flex-wrap gap-4 md:gap-16">
@@ -69,7 +70,7 @@ export function Footer() {
                             <div className="flex flex-col gap-4">
                                 <h4 className="text-xl font-bold">Company</h4>
                                 <ul className="flex flex-col gap-2.5 text-[13px] text-white/60">
-                                    <li><a href="#" className="hover:text-primary flex items-center gap-1.5"><span className="text-white/40 text-[8px]">▶</span> About Us</a></li>
+                                    <li><Link to="/about-us" className="hover:text-primary flex items-center gap-1.5"><span className="text-white/40 text-[8px]">▶</span> About Us</Link></li>
                                     <li><a href="#" className="hover:text-primary flex items-center gap-1.5"><span className="text-white/40 text-[8px]">▶</span> Regulation</a></li>
                                     <li><a href="#" className="hover:text-primary flex items-center gap-1.5"><span className="text-white/40 text-[8px]">▶</span> Contact Us</a></li>
                                 </ul>
