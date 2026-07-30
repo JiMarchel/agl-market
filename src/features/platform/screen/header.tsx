@@ -43,7 +43,7 @@ export function Header() {
                 {/* Right Content */}
                 <div className="flex-1 relative w-full flex items-center justify-center min-h-100 lg:min-h-125">
                     <img 
-                        src="/Double-Phone.png" 
+                        src="/Double-Phone.webp" 
                         alt="Double Phones" 
                         className="w-full h-auto max-w-162.5 object-contain transform lg:scale-125 lg:translate-x-12 lg:-translate-y-4"
                     />

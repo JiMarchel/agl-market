@@ -25,8 +25,8 @@ export function Body() {
                     {/* Right Image */}
                     <div className="flex-1 w-full flex justify-center lg:justify-end relative">
                         <img
-                            src="/LAPTOP.png"
-                            alt="MT5 on Laptop"
+                            src="/LAPTOP.webp"
+                            alt="Trading Platform on Laptop"
                             className="w-full max-w-175 h-auto object-contain transform lg:scale-110 lg:translate-y-8"
                         />
                     </div>

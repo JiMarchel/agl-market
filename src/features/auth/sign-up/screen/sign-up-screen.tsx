@@ -6,7 +6,7 @@ export function SignUpScreen() {
             {/* Left side Image */}
             <div className="hidden lg:flex flex-1 relative">
                 <img 
-                    src="/auth-image.png" 
+                    src="/auth-image.webp" 
                     alt="Auth Background" 
                     className="absolute inset-0 w-full h-full object-cover"
                 />

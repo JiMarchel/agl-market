@@ -1,9 +1,10 @@
 export function Hero() {
   return (
-    <section
-      className="relative flex min-h-162.5 lg:min-h-212.5 items-center bg-cover bg-center"
-      style={{ backgroundImage: "url(/hero.png)" }}
+    <section 
+      className="relative w-full h-screen bg-cover bg-center flex items-center justify-center lg:justify-start"
+      style={{ backgroundImage: "url(/hero.webp)" }}
     >
+      <div className="absolute inset-0 bg-black/60 lg:bg-black/40"></div>
       <div className="mx-auto flex w-full max-w-7xl items-center justify-end px-6">
         <div className="max-w-md text-center">
           <h1 className="mb-4 text-5xl font-bold text-white">
