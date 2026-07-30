@@ -1,4 +1,4 @@
-import { About } from '#/features/about-us/components/about'
+import { About } from '#/features/about-us/screen/about'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/about-us/')({
