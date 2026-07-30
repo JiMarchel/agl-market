@@ -1,4 +1,4 @@
-import { Transaction } from '#/features/trading/components/transaction'
+import { Transaction } from '#/features/trading/screen/transaction'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/trading/')({
